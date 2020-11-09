@@ -1,4 +1,5 @@
 import React from 'react';
+import CurrentWeatherDisplay from './current_weather_display';
 
 class WeatherDisplay extends React.Component {
 
@@ -70,6 +71,7 @@ render() {
             </form>   
             {!currentWeather && this.props.errors && <div>Please Enter A Valid US City</div> }
             <div className="toggle-feature" onClick={this.handleToggle}><span className={this.state.Fahrenheit ? "toggle selected" : "toggle"}>Fahrenheit</span><span className={this.state.Fahrenheit ? "toggle" : "toggle selected"}>Celcius</span></div>
+            <CurrentWeatherDisplay cityName={cityName} currentWeather={currentWeather} currentDesc={currentDesc} Fahrenheit={this.state.Fahrenheit}/>
             </>
         )
     }
