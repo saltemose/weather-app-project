@@ -99,6 +99,69 @@ span.toggle {
   font-size: 16px;
 }
 
+.city-name {
+  text-transform: capitalize;
+  font-size: 40px;
+}
+
+.current-temp {
+  font-size: 60px;
+}
+
+.current-desc {
+  text-transform: capitalize;
+}
+
+span.current-detail {
+  width: 100px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: normal;
+  padding: 10px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.last-updated {
+  font-size: 16px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.forecast-scroller {
+  position: relative;
+  margin-top: 20px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  --webkit-scrollbar: none;
+  scrollbar-width: none;  
+  animation: slideleft .8s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+
+.forecast-item {
+  display: inline-block;
+  width: 120px;
+  vertical-align: top;
+  border-right: 1px solid rgba(255, 255, 255, 0.534);
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.116);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+img.forecast-img {
+  width: 50px;
+}
+
+.forecast-desc {
+  white-space: normal;
+}
+
 @media (max-width: 800px) {
   .search-icon i {
     font-size: 16px;

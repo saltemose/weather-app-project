@@ -1,5 +1,6 @@
 import React from 'react';
 import CurrentWeatherDisplay from './current_weather_display';
+import Forecast from './forecast';
 
 class WeatherDisplay extends React.Component {
 
@@ -20,7 +21,7 @@ class WeatherDisplay extends React.Component {
 componentDidMount() {
     if (this.props.match.params.cityName) {
         const cityName = this.props.match.params.cityName
-       this.fetchWeather(cityName)
+        this.fetchWeather(cityName)
     }
     
     }
@@ -34,7 +35,6 @@ componentDidUpdate(prevProps) {
 
 
 handleInput(e) {
-    
     const inputVal = e.target.value;
     this.setState({ cityNameInput: inputVal })
 }
@@ -62,16 +62,15 @@ render() {
     const { currentDesc, currentWeather, forecast } = this.props 
     const cityName = this.props.match.params.cityName
 
-    
-        
         return (
             <>
             <form onSubmit={this.handleSubmit}>
-            <input onChange={this.handleInput} type="text" placeholder="Enter your city"></input><span className="search-icon"><i class="far fa-search"></i></span>
+            <input onChange={this.handleInput} type="text" placeholder="Enter a U.S. city"></input><span className="search-icon"><i class="far fa-search"></i></span>
             </form>   
             {!currentWeather && this.props.errors && <div>Please Enter A Valid US City</div> }
             <div className="toggle-feature" onClick={this.handleToggle}><span className={this.state.Fahrenheit ? "toggle selected" : "toggle"}>Fahrenheit</span><span className={this.state.Fahrenheit ? "toggle" : "toggle selected"}>Celcius</span></div>
             <CurrentWeatherDisplay cityName={cityName} currentWeather={currentWeather} currentDesc={currentDesc} Fahrenheit={this.state.Fahrenheit}/>
+            <Forecast forecast={forecast} Fahrenheit={this.state.Fahrenheit}/>
             </>
         )
     }
