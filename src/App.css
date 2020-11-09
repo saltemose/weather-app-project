@@ -24,6 +24,24 @@ body {
   width: 100%;
 }
 
+.navbar {
+  width: 100%;
+}
+
+.logo-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: fit-content;
+  text-align: left;
+}
+
+img.logo {
+  width: 40px;
+  text-align: left;
+  overflow: hidden;
+}
+
 .title {
   display: inline-block;
   position: relative;
@@ -167,5 +185,19 @@ img.forecast-img {
     font-size: 16px;
     padding: 4px;
     padding-top: 7px;
+  }
+
+  .forecast-item {
+    display: inline-block;
+    width: 28%;
+  }
+
+  span.current-detail {
+    width: 80px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: normal;
+    padding: 10px;
+    font-size: 14px;
   }
 }
