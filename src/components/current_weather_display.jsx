@@ -8,10 +8,6 @@ import NightRain from '../images/night-rain.png'
 
 class CurrentWeatherDisplay extends React.Component {
 
-    constructor(props){
-        super(props);
-    }
-
 toFahrenheit(temp) {
     return ((temp - 273.15) * 9/5 + 32).toFixed(0) + `\u00B0F`
 }
@@ -33,7 +29,7 @@ render() {
           <div className="city-name">{cityName}</div>
             <div className="current-weather">
                 <div className="current-temp">{this.props.Fahrenheit ? this.toFahrenheit(currentWeather.temp) : this.toCelsius(currentWeather.temp)}</div>
-                {((currHour >= 7 && PM === "PM") || (currHour < 5 && PM === "AM") || currHour === 12 && PM == "AM") ? (
+                {(((currHour >= 7 && PM === "PM") || (currHour < 5 && PM === "AM") || (currHour === 12 && PM === "AM"))) ? (
                         <img className="forecast-img" alt="" src={currentDesc["0"].main === 'Clear' ? Night : currentDesc["0"].main === 'Rain' ? NightRain : NightCloudy}></img> ) : (
                         <img className="forecast-img" alt="" src={currentDesc["0"].main === 'Clear' ? Sunny : currentDesc["0"].main === 'Rain' ? Rainy : Cloudy}></img> 
                         )

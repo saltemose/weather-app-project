@@ -9,10 +9,6 @@ import NightRain from '../images/night-rain.png'
 
 class Forecast extends React.Component {
 
-    constructor(props){
-        super(props);
-    }
-
 
 toFahrenheit(temp) {
     return ((temp - 273.15) * 9/5 + 32).toFixed(0) + `\u00B0F`
@@ -31,7 +27,7 @@ getTime(time) {
         timeValue= "" + hours;
     } else if (hours > 12) {
         timeValue= "" + (hours - 12);
-    } else if (hours == 0) {
+    } else if (hours === 0) {
         timeValue= "12";
     }   
     
